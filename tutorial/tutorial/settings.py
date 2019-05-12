@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'rest_framework',
-    'django-extensions',
+    'django_extensions',
     'snippets.apps.SnippetsConfig',
 
 ]
