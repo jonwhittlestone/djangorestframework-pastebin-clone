@@ -10,6 +10,10 @@ or create a record with:
 
 `$ http --json POST http://127.0.0.1:8000/snippets/ code="print(456)"`
 
+or remove a record with:
+
+`$ http --json DELETE http://127.0.0.1:8000/snippets/9/`
+
 
 ---
 ## Includes a Jupyter Notebook that can be run with Shell Plus.
