@@ -2,7 +2,17 @@
 
 Django Rest Framework Tutorial [from official site](https://www.django-rest-framework.org/tutorial/1-serialization/).
 
-Includes a Jupyter Notebook that can be run with Shell Plus.
+Try hitting an endpoint with `httpie`
+
+`$ http http://127.0.0.1:8000/snippets.json --debug`
+
+or create a record with:
+
+`$ http --json POST http://127.0.0.1:8000/snippets/ code="print(456)"`
+
+
+---
+## Includes a Jupyter Notebook that can be run with Shell Plus.
 
 To run the Jupyter Notebook:
 
