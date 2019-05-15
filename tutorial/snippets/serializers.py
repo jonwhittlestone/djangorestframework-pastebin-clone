@@ -34,15 +34,16 @@ class to_refactor_SnippetSerializer(serializers.Serializer):
 
 class SnippetSerializer(serializers.ModelSerializer):
     owner = serializers.ReadOnlyField(source='owner.username')
+    highlight = serializers.HyperlinkedIdentityField(view_name='snippet-highlight', format='html')
     class Meta:
         model = Snippet
-        fields = ('id', 'title', 'code', 'linenos',
-                  'language', 'style', 'owner')
+        fields = ('url', 'id', 'highlight', 'owner',
+                        'title', 'code', 'linenos', 'language', 'style')
 
-class UserSerializer(serializers.ModelSerializer):
+class UserSerializer(serializers.HyperlinkedModelSerializer):
     snippets = serializers.PrimaryKeyRelatedField(
         many=True, queryset=Snippet.objects.all())
 
     class Meta:
         model = User
-        fields = ('id', 'username', 'snippets')
+        fields = ('url', 'id', 'username', 'snippets')
