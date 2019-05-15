@@ -6,11 +6,16 @@ Try hitting an endpoint with `httpie`
 
 `$ http http://127.0.0.1:8000/snippets.json --debug`
 
-or create a record with:
+or create a record with either command line or browseable API:
 
-`$ http --json POST http://127.0.0.1:8000/snippets/ code="print(456)"`
+`$ http -a jon:snarrf POST http://127.0.0.1:8000/snippets/ code="print(123)"`
 
-or remove a record with:
+Vist the following URL for logging in to DRF Browseable API:
+
+http://127.0.0.1:8000/api-auth/login/?next=/snippets/
+
+
+And remove a record with:
 
 `$ http --json DELETE http://127.0.0.1:8000/snippets/9/`
 
